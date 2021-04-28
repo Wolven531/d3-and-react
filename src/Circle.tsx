@@ -1,18 +1,12 @@
-import { MutableRefObject, useEffect, useRef } from 'react'
-import * as d3 from 'd3'
+// import { MutableRefObject, useEffect, useRef } from 'react'
+// import * as d3 from 'd3'
 
 const Circle = () => {
-	const ref: MutableRefObject<SVGSVGElement> = useRef<SVGSVGElement>() as MutableRefObject<SVGSVGElement>
-
-	useEffect(() => {
-		const svgElement = d3.select(ref.current)
-		svgElement.append('circle')
-			.attr('cx', 150)
-			.attr('cy', 70)
-			.attr('r', 50)
-	}, [])
-
-	return <svg ref={ref} />
+	return (
+		<svg>
+			<circle cx="150" cy="77" r="40" />
+		</svg>
+	)
 }
 
 export default Circle
