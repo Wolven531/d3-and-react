@@ -1,5 +1,6 @@
 import React from 'react'
 import Circle from './Circle'
+import Circles from './Circles'
 import Svg from './Svg'
 import './App.css'
 
@@ -9,6 +10,7 @@ function App() {
 			<header className="App-header">
 				<Svg></Svg>
 				<Circle></Circle>
+				<Circles></Circles>
 			</header>
 		</div>
 	)
