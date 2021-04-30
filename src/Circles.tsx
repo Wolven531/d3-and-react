@@ -3,8 +3,9 @@ import { generateDataset, useInterval } from './utils'
 import * as d3 from 'd3'
 
 const Circles = () => {
-	const [dataset, setDataset] = useState(generateDataset())
 	const ref: MutableRefObject<SVGSVGElement> = useRef<SVGSVGElement>() as MutableRefObject<SVGSVGElement>
+	const updateTimeSecs = 1000
+	const [dataset, setDataset] = useState(generateDataset())
 
 	useEffect(() => {
 		const svgElement = d3.select(ref.current)
@@ -25,7 +26,7 @@ const Circles = () => {
 		)
 
 		setDataset(newDataset)
-	}, 2000)
+	}, updateTimeSecs)
 
 	return <svg viewBox="0 0 100 50" ref={ref} />
 }
