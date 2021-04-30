@@ -8,17 +8,22 @@ const Circles = () => {
 
 	useEffect(() => {
 		const svgElement = d3.select(ref.current)
-		svgElement
-			.selectAll("circle")
+		svgElement.selectAll('circle')
 			.data(dataset)
-			.join("circle")
-			.attr("cx", (d) => d[0])
-			.attr("cy", (d) => d[1])
-			.attr("r", 3)
+			.join('circle')
+			.attr('cx', (d) => d[0])
+			.attr('cy', (d) => d[1])
+			.attr('r', 3)
 	}, [dataset])
 
 	useInterval(() => {
 		const newDataset = generateDataset()
+
+		console.debug(
+			'newDataset =',
+			newDataset,
+		)
+
 		setDataset(newDataset)
 	}, 2000)
 
