@@ -19,10 +19,10 @@ const Circles = () => {
 	return (
 		<svg viewBox="0 0 100 50">
 			{
-				dataset.map((coords, ind) =>
+				dataset.map(([cx, cy], ind) =>
 					<circle
-						cx={coords[0]}
-						cy={coords[1]}
+						cx={cx}
+						cy={cy}
 						r="3"
 					></circle>
 				)
