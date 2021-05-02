@@ -3,19 +3,19 @@ import { generateDataset, useInterval } from './utils'
 import * as d3 from 'd3'
 
 const Circles = () => {
-	const ref: MutableRefObject<SVGSVGElement> = useRef<SVGSVGElement>() as MutableRefObject<SVGSVGElement>
+	// const ref: MutableRefObject<SVGSVGElement> = useRef<SVGSVGElement>() as MutableRefObject<SVGSVGElement>
 	const updateTimeSecs = 1000
 	const [dataset, setDataset] = useState(generateDataset())
 
-	useEffect(() => {
-		const svgElement = d3.select(ref.current)
-		svgElement.selectAll('circle')
-			.data(dataset)
-			.join('circle')
-			.attr('cx', (d) => d[0])
-			.attr('cy', (d) => d[1])
-			.attr('r', 3)
-	}, [dataset])
+	// useEffect(() => {
+		// const svgElement = d3.select(ref.current)
+		// svgElement.selectAll('circle')
+		// 	.data(dataset)
+		// 	.join('circle')
+		// 	.attr('cx', (d) => d[0])
+		// 	.attr('cy', (d) => d[1])
+		// 	.attr('r', 3)
+	// }, [dataset])
 
 	useInterval(() => {
 		const newDataset = generateDataset()
@@ -28,7 +28,19 @@ const Circles = () => {
 		setDataset(newDataset)
 	}, updateTimeSecs)
 
-	return <svg viewBox="0 0 100 50" ref={ref} />
+	return (
+		<svg viewBox="0 0 100 50">
+			{
+				dataset.map((coords, ind) =>
+					<circle
+						cx={coords[0]}
+						cy={coords[1]}
+						r="3"
+					></circle>
+				)
+			}
+		</svg>
+	)
 }
 
 export default Circles
