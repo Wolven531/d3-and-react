@@ -4,6 +4,7 @@ import { generateDataset, useInterval } from './utils'
 
 const AnimatedCircles = () => {
 	const ref: MutableRefObject<SVGSVGElement> = useRef<MutableRefObject<SVGSVGElement>>() as unknown as MutableRefObject<SVGSVGElement>
+	const ANIMATION_TIME_SECONDS = 1.2
 	const generateCircles = () => {
 		return generateDataset()
 	}
@@ -25,7 +26,7 @@ const AnimatedCircles = () => {
 					.attr('fill', 'cornflowerblue')
 					.call(
 						(enter) => enter.transition()
-							.duration(1200)
+							.duration(ANIMATION_TIME_SECONDS * 1000)
 							.attr('cy', 10)
 							.attr('r', 6)
 							.style('opacity', 1)
@@ -34,7 +35,7 @@ const AnimatedCircles = () => {
 				(exit) => exit.attr('fill', 'tomato')
 					.call(
 						(exit) => exit.transition()
-							.duration(1200)
+							.duration(ANIMATION_TIME_SECONDS * 1000)
 							.attr('r', 0)
 							.style('opacity', 0)
 							.remove()
