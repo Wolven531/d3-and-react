@@ -1,5 +1,10 @@
 {
   "name": "d3-and-react",
+  "author": {
+    "email": "anthony.williams.cs@gmail.com",
+    "name": "Anthony Williams",
+    "url": "https://github.com/Wolven531/d3-and-react"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
