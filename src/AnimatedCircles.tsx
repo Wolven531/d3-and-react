@@ -19,6 +19,7 @@ const AnimatedCircles = () => {
 		const centerY = 10
 		const radiusMax = 6
 		const radiusStart = 0
+		const D3_FILL = 'fill'
 
 		svgElement.selectAll('circle')
 			.data(visibleCircles)
@@ -27,7 +28,7 @@ const AnimatedCircles = () => {
 					.attr('cx', (d) => d[0] * 15 + 10)
 					.attr('cy', centerY)
 					.attr('r', radiusStart)
-					.attr('fill', 'cornflowerblue')
+					.attr(D3_FILL, 'cornflowerblue')
 					.call(
 						(enter) => enter.transition()
 							.duration(ANIMATION_TIME_SECONDS * 1000)
@@ -35,8 +36,8 @@ const AnimatedCircles = () => {
 							.attr('r', radiusMax)
 							.style('opacity', 1)
 					),
-				(update) => update.attr('fill', 'lightgrey'),
-				(exit) => exit.attr('fill', 'tomato')
+				(update) => update.attr(D3_FILL, 'lightgrey'),
+				(exit) => exit.attr(D3_FILL, 'tomato')
 					.call(
 						(exit) => exit.transition()
 							.duration(ANIMATION_TIME_SECONDS * 1000)
