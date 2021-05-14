@@ -5,6 +5,7 @@ import { generateDataset, useInterval } from './utils'
 const AnimatedCircles = () => {
 	const ref: MutableRefObject<SVGSVGElement> = useRef<MutableRefObject<SVGSVGElement>>() as unknown as MutableRefObject<SVGSVGElement>
 	const ANIMATION_TIME_SECONDS = 1.2
+	const ANIMATION_TIME_MILLIS = ANIMATION_TIME_SECONDS * 1000
 	const generateCircles = () => {
 		return generateDataset()
 	}
@@ -31,7 +32,7 @@ const AnimatedCircles = () => {
 					.attr(D3_FILL, 'cornflowerblue')
 					.call(
 						(enter) => enter.transition()
-							.duration(ANIMATION_TIME_SECONDS * 1000)
+							.duration(ANIMATION_TIME_MILLIS)
 							.attr('cy', centerY)
 							.attr('r', radiusMax)
 							.style('opacity', 1)
@@ -40,13 +41,13 @@ const AnimatedCircles = () => {
 				(exit) => exit.attr(D3_FILL, 'tomato')
 					.call(
 						(exit) => exit.transition()
-							.duration(ANIMATION_TIME_SECONDS * 1000)
+							.duration(ANIMATION_TIME_MILLIS)
 							.attr('r', radiusStart)
 							.style('opacity', 0)
 							.remove()
 					)
 			)
-	}, [visibleCircles])
+	}, [ visibleCircles, ANIMATION_TIME_MILLIS, ])
 
 	return <svg viewBox="0 0 100 20" ref={ref} />
 }
