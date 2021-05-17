@@ -22,13 +22,13 @@ function App() {
 				{currentDisplayIndex === 2 && <Circles></Circles>}
 			</section>
 			<section>
-				<Button variant="contained">
+				<Button variant="contained" onClick={() => { setCurrentDisplayIndex(0) }}>
 					Show SVG
 				</Button>
-				<Button variant="contained" color="primary">
+				<Button variant="contained" color="primary" onClick={() => { setCurrentDisplayIndex(1) }}>
 					Show Solo Circle
 				</Button>
-				<Button variant="contained" color="secondary">
+				<Button variant="contained" color="secondary" onClick={() => { setCurrentDisplayIndex(2) }}>
 					Show Circles
 				</Button>
 			</section>
