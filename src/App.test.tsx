@@ -10,11 +10,12 @@ describe('App component', () => {
 	})
 
 	it('renders header properly', () => {
-		// expect(comp.getByText(/D3 and React/)).toBeInTheDocument()
-		// expect(screen.getByText(/D3 and React/)).toBeInTheDocument()
-
+		// approach 1 - DOM API (dev-centric testing, verifies function of comp)
 		const headerResult = comp.container.querySelectorAll('header')
 		expect(headerResult).toHaveLength(1)
 		expect(headerResult[0].textContent).toBe('D3 and React')
+
+		// approach 2 - screen API (user-centric testing, verifies form of comp)
+		expect(screen.getByText(/D3 and React/)).toBeInTheDocument()
 	})
 })
