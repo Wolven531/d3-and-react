@@ -1,3 +1,4 @@
+import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import { styled } from '@material-ui/core/styles'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -23,16 +24,26 @@ function App() {
 	})
 
 	return (
-		<div>
-			<header>
-				<h3>D3 and React</h3>
-			</header>
-			<section>
+		<Box display="flex" flexDirection="column">
+			<Box className="header"
+				fontWeight="fontWeightBold"
+				mx="auto"
+				my="1rem"
+				textAlign="center"
+			>
+				D3 and React
+			</Box>
+			<Box className="content"
+				display="flex"
+				flexGrow={1}
+				mx="auto"
+				my="1rem"
+			>
 				{currentDisplayIndex === 0 && <Svg></Svg>}
 				{currentDisplayIndex === 1 && <Circle></Circle>}
 				{currentDisplayIndex === 2 && <Circles></Circles>}
-			</section>
-			<section>
+			</Box>
+			<Box className="controls">
 				<CustomStyledButton variant="contained" onClick={() => { setCurrentDisplayIndex(0) }}>
 					Show SVG
 				</CustomStyledButton>
@@ -42,8 +53,8 @@ function App() {
 				<CustomStyledButton variant="contained" color="secondary" onClick={() => { setCurrentDisplayIndex(2) }}>
 					Show Circles
 				</CustomStyledButton>
-			</section>
-		</div>
+			</Box>
+		</Box>
 	)
 }
 
