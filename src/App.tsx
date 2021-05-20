@@ -1,6 +1,4 @@
-import Box from '@material-ui/core/Box'
-import Button from '@material-ui/core/Button'
-import { styled } from '@material-ui/core/styles'
+import { Box, Button, styled } from '@material-ui/core'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useState } from 'react'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
