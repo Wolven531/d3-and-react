@@ -1,3 +1,4 @@
+/*
 body {
 	align-items: center;
 	background-color: #282c34;
@@ -11,4 +12,9 @@ body {
 
 h3 {
 	text-align: center;
+}
+*/
+
+#root {
+	min-height: 100vh;
 }
