@@ -23,6 +23,7 @@ const Circles = () => {
 					<circle
 						cx={cx}
 						cy={cy}
+						key={`circle-${ind}`}
 						r="3"
 					></circle>
 				)
