@@ -34,7 +34,8 @@ function App() {
 			<Box className="content"
 				display="flex"
 				flexGrow={1}
-				mx="auto"
+				// !!! FIXME - enabling this hides the multiple circles...
+				// mx="auto"
 				my="1rem"
 			>
 				{currentDisplayIndex === 0 && <Svg></Svg>}
