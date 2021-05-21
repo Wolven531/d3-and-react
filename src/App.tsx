@@ -22,7 +22,13 @@ function App() {
 	})
 
 	return (
-		<Box display="flex" flexDirection="column">
+		<Box
+			bgcolor="darkgray"
+			display="flex"
+			flexDirection="column"
+			flexGrow={1}
+			minHeight="100vh"
+		>
 			<Box className="header"
 				fontWeight="fontWeightBold"
 				mx="auto"
