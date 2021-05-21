@@ -42,7 +42,9 @@ function App() {
 				{currentDisplayIndex === 1 && <Circle></Circle>}
 				{currentDisplayIndex === 2 && <Circles></Circles>}
 			</Box>
-			<Box className="controls">
+			<Box className="controls"
+				mx="auto"
+			>
 				<CustomStyledButton variant="contained" onClick={() => { setCurrentDisplayIndex(0) }}>
 					Show SVG
 				</CustomStyledButton>
