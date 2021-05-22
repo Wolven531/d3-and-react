@@ -16,9 +16,10 @@ function App() {
 		// borderRadius: 3,
 		boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
 		color: 'white',
-		margin: '10px',
 		// height: 48,
+		margin: '10px',
 		// padding: '0 30px',
+		width: '93%',
 	})
 
 	return (
