@@ -39,10 +39,10 @@ function App() {
 				D3 and React
 			</Box>
 			<Box className="content"
+				alignItems="center"
 				display="flex"
 				flexGrow={1}
-				// !!! FIXME - enabling this hides the multiple circles...
-				// mx="auto"
+				justifyContent="center"
 				my="1rem"
 			>
 				{currentDisplayIndex === 0 && <Svg></Svg>}
